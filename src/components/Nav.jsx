@@ -8,8 +8,8 @@ const Nav = () => {
   const [middleSlideIndex, setMiddleSlideIndex] = useState(0);
   const [rankSlideIndex, setRankSlideIndex] = useState(0);
   const navigate = useNavigate();
-  const handleLink = () => {
-    navigate("*");
+  const handleLink = (url) => {
+    navigate(`/${url}`);
   };
   const handleArrow = (part, direction) => {
     if (part === "middle" && direction === "left") {
@@ -46,21 +46,21 @@ const Nav = () => {
             <img
               src="https://janet.co.kr/img/common/main/banner/mainBn_top_01.png"
               alt=""
-              onClick={() => handleLink()}
+              onClick={() => handleLink("link")}
             />
           </SplideSlide>
           <SplideSlide className="sliderItem">
             <img
               src="https://janet.co.kr/img/common/main/banner/mainBn_top_02.png"
               alt=""
-              onClick={() => handleLink()}
+              onClick={() => handleLink("link")}
             />
           </SplideSlide>
           <SplideSlide className="sliderItem">
             <img
               src="https://janet.co.kr/img/common/main/banner/mainBn_top_03.png"
               alt=""
-              onClick={() => handleLink()}
+              onClick={() => handleLink("link")}
             />
           </SplideSlide>
           <SplideSlide className="sliderItem">

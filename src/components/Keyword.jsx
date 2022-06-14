@@ -41,8 +41,8 @@ const Keyword = () => {
                       시험일 : {item.esRegdt.slice(0, 10)}
                     </span>
                     <div className="hoverBox">
-                      <span>유형 :</span>
-                      <span>접수기간 :</span>
+                      <span>유형 : {item.category}</span>
+                      <span>접수기간 : {item.reception.slice(0, 10)} ~{ item.reception.slice(32, 42)}</span>
                       <div className="plusIconBox">
                         <img
                           src="https://janet.co.kr/html_demo/img/common/plusB_con.png"
@@ -66,6 +66,7 @@ const KeywordContainer = styled.div`
   max-width: 1024px;
   height: 700px;
   margin: 0 auto;
+  cursor: pointer;
   .keywordTitle {
     text-align: left;
     display: flex;
@@ -164,6 +165,7 @@ const KeywordContainer = styled.div`
           left: -2px;
           span {
             padding: 10px 20px;
+            font-size: 14px;
           }
           .plusIconBox {
             position: absolute;
