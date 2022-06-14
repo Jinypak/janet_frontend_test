@@ -11,15 +11,15 @@ const Header = () => {
   const [activeInput, setActiveInput] = useState(false);
 
   const navigate = useNavigate();
-  const handleLogo = () => {
-    navigate("/");
+  const handleLink = (url) => {
+    navigate(`${url}`);
   };
 
   return (
     <HeaderContainer>
       <div className="headerTop">
         <img
-          onClick={() => handleLogo()}
+          onClick={() => handleLink("/")}
           src="https://janet.co.kr/html_demo/img/common/logo.png"
           className="logo"
           alt="logo"
@@ -84,6 +84,7 @@ const Header = () => {
               onMouseLeave={() => setInfoActive(true)}
               src="https://janet.co.kr/img/common/gnbInfo.png"
               alt=""
+              onClick={() => handleLink("/link")}
             />
           )}
 
@@ -96,25 +97,43 @@ const Header = () => {
               onMouseLeave={() => setTalkActive(true)}
               src="https://janet.co.kr/img/common/gnbTalk.png"
               alt=""
+              onClick={() => handleLink("/link")}
             />
           )}
         </ul>
         <div className="gnbLinkBox">
           {/* Link 태그로 링크 적용 가능 */}
           <div className="gnbLink">
-            <img src="https://janet.co.kr/img/common/header/aca.png" alt="" />
+            <img
+              src="https://janet.co.kr/img/common/header/aca.png"
+              alt=""
+              onClick={() => handleLink("/link")}
+            />
           </div>
           <div className="gnbLink">
-            <img src="https://janet.co.kr/img/common/header/commu.png" alt="" />
+            <img
+              src="https://janet.co.kr/img/common/header/commu.png"
+              alt=""
+              onClick={() => handleLink("/link")}
+            />
           </div>
           <div
             className="gnbLink"
             onMouseOver={() => setActive(true)}
             onMouseLeave={() => setActive(false)}
           >
-            <img src="https://janet.co.kr/img/common/header/ai.png" alt="" />
+            <img
+              src="https://janet.co.kr/img/common/header/ai.png"
+              alt=""
+              onClick={() => handleLink("/link")}
+            />
             {active ? (
-              <span className="modalAi custom">추천 테스트</span>
+              <span
+                className="modalAi custom"
+                onClick={() => handleLink("/link")}
+              >
+                추천 테스트
+              </span>
             ) : null}
           </div>
         </div>
